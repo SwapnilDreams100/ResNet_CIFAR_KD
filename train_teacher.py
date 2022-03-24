@@ -15,6 +15,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--teacher', type=str)
+args = parser.parse_args()
 
 def seed_everything(seed: int):    
     random.seed(seed)
@@ -30,7 +31,7 @@ seed_everything(42)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
-
+use_cuda = True
 # Data
 print('==> Preparing data..')
 transform_train = transforms.Compose([
@@ -113,9 +114,9 @@ def checkpoint(flag= False):
     if not os.path.isdir('checkpoint_teacher'):
        os.mkdir('checkpoint_teacher')
     if not flag:
-      torch.save(net.state_dict(), './checkpoint_teacher/ckpt_'+args.teacher+'_best.pt')
+      torch.save(net.state_dict(), './checkpoint_teacher/testckpt_'+args.teacher+'_best.pt')
     if flag:
-      torch.save(net.state_dict(), './checkpoint_teacher/ckpt_'+args.teacher+'_final.pt')
+      torch.save(net.state_dict(), './checkpoint_teacher/test_ckpt_'+args.teacher+'_final.pt')
       
 def test(epoch):
     global best_acc
