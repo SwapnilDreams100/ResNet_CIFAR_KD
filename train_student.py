@@ -16,6 +16,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--teacher', type=str)
+args = parser.parse_args()
 
 def seed_everything(seed: int):    
     random.seed(seed)
@@ -92,7 +93,7 @@ if device == 'cuda':
     net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
 
-checkpoint = torch.load('./checkpoint_teacher/ckpt_'+args.teacher+'_final.pt')
+checkpoint = torch.load('./checkpoint_teacher/test_ckpt_'+args.teacher+'_final.pt')
 net.load_state_dict(checkpoint)
 criterion = nn.CrossEntropyLoss()
 net.eval()
@@ -193,10 +194,10 @@ def test_kd(epoch):
         
         if not os.path.isdir('checkpoint'):
             os.mkdir('checkpoint')
-        torch.save(student.state_dict(), './checkpoint/student_best.pt')
+        torch.save(student.state_dict(), './checkpoint/project1_model_best.pt')
         best_acc = acc
-    if epoch == 250:
-        torch.save(student.state_dict(), './checkpoint/student_final.pt')
+    if epoch == 200:
+        torch.save(student.state_dict(), './checkpoint/project1_model.pt')
         
     return test_loss/len(trainloader)
 
