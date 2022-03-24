@@ -92,13 +92,7 @@ if device == 'cuda':
     net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
 
-if args.teacher == 'dla':
-  checkpoint = torch.load('./checkpoint_teacher/ckpt_simpledla_mixup_96.16.pt')
-elif args.teacher == 'densenet':
-  checkpoint = torch.load('./checkpoint_teacher/ckpt_densenet121_96.3.pt')
-else:
-  print("Please enter correct teacher")
-
+checkpoint = torch.load('./checkpoint_teacher/ckpt_'+args.teacher+'_final.pt')
 net.load_state_dict(checkpoint)
 criterion = nn.CrossEntropyLoss()
 net.eval()
