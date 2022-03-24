@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 import random, os
 import numpy as np
-from models import *
+from teacher_models import *
 
 import argparse
 parser = argparse.ArgumentParser()
