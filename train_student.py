@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 import random, os
 import numpy as np
-from models import *
+from teacher_models import *
 from project1_model import *
 
 import argparse
