@@ -114,9 +114,9 @@ def checkpoint(flag= False):
     if not os.path.isdir('checkpoint_teacher'):
        os.mkdir('checkpoint_teacher')
     if not flag:
-      torch.save(net.state_dict(), './checkpoint_teacher/testckpt_'+args.teacher+'_best.pt')
+      torch.save(net.state_dict(), './checkpoint_teacher/ckpt_'+args.teacher+'_best.pt')
     if flag:
-      torch.save(net.state_dict(), './checkpoint_teacher/test_ckpt_'+args.teacher+'_final.pt')
+      torch.save(net.state_dict(), './checkpoint_teacher/ckpt_'+args.teacher+'_final.pt')
       
 def test(epoch):
     global best_acc
