@@ -19,7 +19,7 @@ python train_teacher.py --teacher "dla"
 python train_student.py --teacher "densenet"
 python train_student.py --teacher "dla"
 ```
-# Find the entire structure of our Resnets architecture
+# The entire structure of our Resnets architecture
 ![Neutron 1](https://user-images.githubusercontent.com/60310113/160039430-3bbbfb04-5efd-40d0-a340-13022651a787.png)
 ![Neutron 2](https://user-images.githubusercontent.com/60310113/160039429-1a365f6e-1b58-4079-8a57-43985ee053d1.png)
 ![Neutron 3](https://user-images.githubusercontent.com/60310113/160039427-cfb7ee71-9448-4735-a0b1-d7b2666e88e9.png)
