@@ -27,15 +27,21 @@ conda create -n project pytorch torchvision torchaudio cudatoolkit=11.3 -c pytor
 Densenet
 
 DLA
+## Structure of the repo:
+-> checkpoint_teacher : stores the teacher models checkpoints
+-> checkpoint : stores the resnet student checkpoint model
+-> teacher_models : stores the teacher model specs
 
 ## Training
 ```
-# First train the teacher with: 
+
+# [OPTIONAL:] Train the teacher: 
 python train_teacher.py --teacher "densenet"
 python train_teacher.py --teacher "dla"
 
+or you can just use the checkpoints provided already :) 
 
-# You can train the student with: 
+# You can train the student directly with: 
 python train_student.py --teacher "densenet"
 python train_student.py --teacher "dla"
 ```
