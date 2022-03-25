@@ -29,7 +29,9 @@ Densenet
 DLA
 ## Structure of the repo:
 -> checkpoint_teacher : stores the teacher models checkpoints
+
 -> checkpoint : stores the resnet student checkpoint model
+
 -> teacher_models : stores the teacher model specs
 
 ## Training
