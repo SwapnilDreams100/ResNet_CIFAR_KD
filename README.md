@@ -3,9 +3,29 @@
 ## Prerequisites
 - Python 3.6+
 - PyTorch 1.0+
+- CUDA 11.0+
+- Windows/Linux OS for PyTorch GPU
+
+## Installation
+### Python
+Create and activate a new pip environment
+```
+python3 -m venv project
+source pytorch/bin/activate
+```
+Install PyTorch for pip environment
+```
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+```
+### Anaconda
+Install PyTorch GPU in a new conda environment
+```
+conda create -n project pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+```
 
 ## Teacher models:
 Densenet
+
 DLA
 
 ## Training
